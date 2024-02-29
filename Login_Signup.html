@@ -10,10 +10,12 @@
     <script>
         $(document).ready(function () {
             $("#flogin").click(function () {
+                event.preventDefault();
                 alert("Logged_In");
                 window.location.href = "./upload.html";
             })
             $("#fsignup").click(function () {
+                event.preventDefault();
                 alert("Signed_Up");
                 window.location.href = "./upload.html";
             })
