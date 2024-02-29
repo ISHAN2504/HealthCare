@@ -1,0 +1,252 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+header {
+    background-color: #f8f8f8;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    animation: fadeInUp 0.8s forwards;
+}
+
+nav {
+    background-color: #5AE09A;
+    color: #5AE06C;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeInUp 0.8s forwards;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    margin: 0 10px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #5AE06C;
+    transform-origin: 50%;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #f8f8f8;
+    text-decoration: underline;
+}
+
+nav a:hover::before {
+    transform: scaleX(1);
+}
+
+.buttons-container {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-53 {
+    border: 1px solid;
+    border-radius: 999px;
+    box-sizing: border-box;
+    width: 30px;
+    height: 10px;
+    display: block;
+    font-weight: 900;
+    overflow: hidden;
+    padding: 1.2rem 3rem;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.btn-53 .original {
+    background: #5AE06C;
+    color: #000;
+    display: grid;
+    inset: 0;
+    place-content: center;
+    position: absolute;
+    transition: transform 0.2s cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.btn-53:hover .original {
+    transform: translateY(100%);
+}
+
+.btn-53 .letters {
+    display: inline-flex;
+}
+
+.btn-53 span {
+    opacity: 0;
+    transform: translateY(-15px);
+    transition: transform 0.2s cubic-bezier(0.87, 0, 0.13, 1), opacity 0.2s;
+}
+
+.btn-53 span:nth-child(2n) {
+    transform: translateY(15px);
+}
+
+.btn-53:hover span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.btn-53:hover span:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.btn-53:hover span:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.btn-53:hover span:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+.btn-53:hover span:nth-child(5) {
+    transition-delay: 0.4s;
+}
+
+.btn-53:hover span:nth-child(6) {
+    transition-delay: 0.5s;
+}
+
+section {
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+}
+
+footer {
+    background-color: #5AE09A;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    animation: fadeInUp 0.8s forwards;
+}
+
+.hero-section {
+    background: url('hero-image.jpg') no-repeat center center;
+    background-size: cover;
+    background-color: #f8f8f8;
+    color: #5ACDE0;
+    text-align: center;
+    padding: 100px 0;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeInAndScale 1s forwards, zoomIn 0.8s forwards;
+    transition: transform 0.3s, opacity 0.5s;
+}
+
+.hero-section:hover {
+    transform: scale(1.05);
+}
+
+.hero-section h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.service-container {
+    display: flex;
+    gap: 15px;
+    justify-content: space-around;
+    animation: fadeInUp 0.8s forwards;
+}
+
+.service-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100px;
+    width: 250px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 400ms;
+}
+
+.service-card p.tip {
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.service-card p.second-text {
+    font-size: .7em;
+}
+
+.service-card.red {
+    background-color: #5AE09A;
+}
+
+.service-card.blue {
+    background-color: #5AE09A;
+}
+
+.service-card.green {
+    background-color: #5AE09A;
+}
+
+.service-card:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.service-container:hover>.service-card:not(:hover) {
+    filter: blur(10px);
+    transform: scale(0.9, 0.9);
+}
+
+@media only screen and (max-width: 768px) {
+    .service-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInAndScale {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
